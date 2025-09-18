@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alhambra Bank & Trust - Interactive Banking Platform</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .hero-gradient {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, #dc2626, #b91c1c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        .image-carousel {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+        }
+        .carousel-container {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        .carousel-item {
+            min-width: 100%;
+            position: relative;
+        }
+        .carousel-item img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+        .carousel-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.7));
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 16px;
+        }
+        .carousel-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #ccc;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        .carousel-dot.active {
+            background: #dc2626;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-red-700 text-white rounded-lg flex items-center justify-center">
+                        <span class="font-bold text-lg">A</span>
+                    </div>
+                    <div>
+                        <h1 class="text-xl font-bold text-red-700">Alhambra Bank & Trust</h1>
+                        <p class="text-xs text-gray-600">Excellence in Corporate Banking</p>
+                    </div>
+                </div>
+
+                <!-- Language Selector -->
+                <div class="flex items-center space-x-4">
+                    <select class="border border-gray-300 rounded-lg px-3 py-2 text-sm">
+                        <option>🇺🇸 English</option>
+                        <option>🇪🇸 Español</option>
+                        <option>🇸🇦 العربية</option>
+                        <option>🇨🇳 中文</option>
+                    </select>
+                    <button class="bg-red-700 text-white px-6 py-2 rounded-lg hover:bg-red-800 transition-colors">
+                        Open Account ▼
+                    </button>
+                </div>
+            </div>
+
+            <!-- Navigation Menu -->
+            <div class="border-t border-gray-200 py-2">
+                <div class="flex space-x-1">
+                    <button class="px-4 py-2 bg-red-700 text-white rounded-lg text-sm">Home</button>
+                    <button class="px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-lg text-sm">About</button>
+                    <button class="px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-lg text-sm">Services</button>
+                    <button class="px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-lg text-sm">Trading</button>
+                    <button class="px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-lg text-sm">Market Insights</button>
+                    <button class="px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-lg text-sm">AI Services</button>
+                    <button class="px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-lg text-sm">Portfolio Tracker</button>
+                    <button class="px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-lg text-sm">Blog</button>
+                    <button class="px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-lg text-sm">Contact</button>
+                    <button class="px-4 py-2 bg-gray-800 text-white rounded-lg text-sm ml-auto">Customer Login</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient py-20">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h1 class="text-6xl font-bold mb-6">
+                        <span class="text-red-700">MANAGING</span><br>
+                        <span class="text-red-700">YOUR</span><br>
+                        <span class="text-gradient">WEALTH</span>
+                    </h1>
+                    <h2 class="text-4xl font-bold text-red-700 mb-6">
+                        PROTECTING<br>
+                        YOUR<br>
+                        <em class="text-red-800">LEGACY</em>
+                    </h2>
+                    <p class="text-lg text-gray-700 mb-8 leading-relaxed">
+                        Our mission is to build a borderless financial system that guarantees sovereignty, fosters inclusion, and protects and empowers every wealth journey.
+                    </p>
+                    <div class="flex space-x-4">
+                        <button class="bg-red-700 text-white px-8 py-3 rounded-lg hover:bg-red-800 transition-colors font-semibold">
+                            Open Account
+                        </button>
+                        <button class="border-2 border-blue-600 text-blue-600 px-8 py-3 rounded-lg hover:bg-blue-50 transition-colors font-semibold">
+                            Schedule a Call
+                        </button>
+                    </div>
+                </div>
+                <div>
+                    <!-- Alhambra Image Carousel -->
+                    <div class="image-carousel">
+                        <div class="carousel-container" id="alhambraCarousel">
+                            <div class="carousel-item">
+                                <img src="https://images.unsplash.com/photo-1539650116574-75c0c6d73f6e?w=600&h=300&fit=crop" alt="Court of the Lions">
+                                <div class="carousel-overlay">
+                                    <h3 class="text-xl font-bold">Court of the Lions</h3>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="https://images.unsplash.com/photo-1583422409516-2895a77efded?w=600&h=300&fit=crop" alt="Court of the Lions - Detail">
+                                <div class="carousel-overlay">
+                                    <h3 class="text-xl font-bold">Court of the Lions - Detail</h3>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="https://images.unsplash.com/photo-1571115764595-644a1f56a55c?w=600&h=300&fit=crop" alt="Palace Courtyard">
+                                <div class="carousel-overlay">
+                                    <h3 class="text-xl font-bold">Palace Courtyard</h3>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="https://images.unsplash.com/photo-1583422409516-2895a77efded?w=600&h=300&fit=crop" alt="Architectural Marvel">
+                                <div class="carousel-overlay">
+                                    <h3 class="text-xl font-bold">Architectural Marvel</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-dots" id="carouselDots"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Alhambra Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center text-red-700 mb-16">Why Alhambra Bank & Trust</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center card-hover p-6 border border-red-200 rounded-lg">
+                    <div class="w-16 h-16 bg-red-100 text-red-700 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl">🏛️</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-red-700 mb-2">Regulatory Excellence</h3>
+                    <p class="text-gray-600">Fully licensed and regulated by CIMA</p>
+                </div>
+                <div class="text-center card-hover p-6 border border-red-200 rounded-lg">
+                    <div class="w-16 h-16 bg-red-100 text-red-700 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl">🌍</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-red-700 mb-2">Global Reach</h3>
+                    <p class="text-gray-600">Serving clients worldwide with local expertise</p>
+                </div>
+                <div class="text-center card-hover p-6 border border-red-200 rounded-lg">
+                    <div class="w-16 h-16 bg-red-100 text-red-700 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl">🔒</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-red-700 mb-2">Privacy & Security</h3>
+                    <p class="text-gray-600">Bank-grade security and confidentiality</p>
+                </div>
+                <div class="text-center card-hover p-6 border border-red-200 rounded-lg">
+                    <div class="w-16 h-16 bg-red-100 text-red-700 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl">🤖</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-red-700 mb-2">AI-Enhanced Banking</h3>
+                    <p class="text-gray-600">Cutting-edge technology for modern banking</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Banking in Paradise Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-4xl font-bold text-red-700 mb-6">Banking in Paradise</h2>
+                    <p class="text-lg text-gray-700 mb-8 leading-relaxed">
+                        Located in the prestigious Cayman Islands, we offer world-class banking services in one of the world's most respected financial centers. Our strategic location provides unparalleled access to global markets while maintaining the highest standards of financial privacy and regulatory compliance.
+                    </p>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-red-600 rounded-full mr-3"></span>
+                            Zero corporate and personal income tax
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-red-600 rounded-full mr-3"></span>
+                            Political and economic stability
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-red-600 rounded-full mr-3"></span>
+                            Strong regulatory framework
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-red-600 rounded-full mr-3"></span>
+                            English common law jurisdiction
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-red-600 rounded-full mr-3"></span>
+                            No exchange controls
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <!-- Cayman Islands Image Carousel -->
+                    <div class="image-carousel">
+                        <div class="carousel-container" id="caymanCarousel">
+                            <div class="carousel-item">
+                                <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600&h=300&fit=crop" alt="Seven Mile Beach Paradise">
+                                <div class="carousel-overlay">
+                                    <h3 class="text-xl font-bold">Seven Mile Beach</h3>
+                                    <p class="text-sm italic">Grand Cayman Island</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=300&fit=crop" alt="Grand Cayman Beach">
+                                <div class="carousel-overlay">
+                                    <h3 class="text-xl font-bold">Grand Cayman Beach</h3>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=600&h=300&fit=crop" alt="Financial District">
+                                <div class="carousel-overlay">
+                                    <h3 class="text-xl font-bold">Financial District</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-dots" id="caymanCarouselDots"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Connect With Us Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center text-red-700 mb-16">Connect With Us</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 max-w-4xl mx-auto">
+                <a href="https://wa.me/13451234567" target="_blank" rel="noopener noreferrer" class="text-center group">
+                    <div class="w-16 h-16 bg-green-500 text-white rounded-full flex items-center justify-center mx-auto mb-2 hover:scale-110 transition-transform cursor-pointer group-hover:shadow-lg">
+                        <span class="text-2xl">💬</span>
+                    </div>
+                    <p class="text-sm text-gray-700 font-medium group-hover:text-red-700 transition-colors">WhatsApp</p>
+                </a>
+                <a href="https://t.me/alhambrabank" target="_blank" rel="noopener noreferrer" class="text-center group">
+                    <div class="w-16 h-16 bg-blue-500 text-white rounded-full flex items-center justify-center mx-auto mb-2 hover:scale-110 transition-transform cursor-pointer group-hover:shadow-lg">
+                        <span class="text-2xl">✈️</span>
+                    </div>
+                    <p class="text-sm text-gray-700 font-medium group-hover:text-red-700 transition-colors">Telegram</p>
+                </a>
+                <a href="https://facebook.com/alhambrabank" target="_blank" rel="noopener noreferrer" class="text-center group">
+                    <div class="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center mx-auto mb-2 hover:scale-110 transition-transform cursor-pointer group-hover:shadow-lg">
+                        <span class="text-2xl">📘</span>
+                    </div>
+                    <p class="text-sm text-gray-700 font-medium group-hover:text-red-700 transition-colors">Facebook</p>
+                </a>
+                <a href="https://twitter.com/alhambrabank" target="_blank" rel="noopener noreferrer" class="text-center group">
+                    <div class="w-16 h-16 bg-blue-400 text-white rounded-full flex items-center justify-center mx-auto mb-2 hover:scale-110 transition-transform cursor-pointer group-hover:shadow-lg">
+                        <span class="text-2xl">🐦</span>
+                    </div>
+                    <p class="text-sm text-gray-700 font-medium group-hover:text-red-700 transition-colors">Twitter</p>
+                </a>
+                <a href="https://instagram.com/alhambrabank" target="_blank" rel="noopener noreferrer" class="text-center group">
+                    <div class="w-16 h-16 bg-pink-500 text-white rounded-full flex items-center justify-center mx-auto mb-2 hover:scale-110 transition-transform cursor-pointer group-hover:shadow-lg">
+                        <span class="text-2xl">📷</span>
+                    </div>
+                    <p class="text-sm text-gray-700 font-medium group-hover:text-red-700 transition-colors">Instagram</p>
+                </a>
+                <a href="https://linkedin.com/company/alhambrabank" target="_blank" rel="noopener noreferrer" class="text-center group">
+                    <div class="w-16 h-16 bg-blue-700 text-white rounded-full flex items-center justify-center mx-auto mb-2 hover:scale-110 transition-transform cursor-pointer group-hover:shadow-lg">
+                        <span class="text-2xl">💼</span>
+                    </div>
+                    <p class="text-sm text-gray-700 font-medium group-hover:text-red-700 transition-colors">LinkedIn</p>
+                </a>
+                <a href="https://youtube.com/alhambrabank" target="_blank" rel="noopener noreferrer" class="text-center group">
+                    <div class="w-16 h-16 bg-red-600 text-white rounded-full flex items-center justify-center mx-auto mb-2 hover:scale-110 transition-transform cursor-pointer group-hover:shadow-lg">
+                        <span class="text-2xl">📺</span>
+                    </div>
+                    <p class="text-sm text-gray-700 font-medium group-hover:text-red-700 transition-colors">YouTube</p>
+                </a>
+                <a href="#" class="text-center group">
+                    <div class="w-16 h-16 bg-purple-500 text-white rounded-full flex items-center justify-center mx-auto mb-2 hover:scale-110 transition-transform cursor-pointer group-hover:shadow-lg">
+                        <span class="text-2xl">💭</span>
+                    </div>
+                    <p class="text-sm text-gray-700 font-medium group-hover:text-red-700 transition-colors">Live Chat</p>
+                </a>
+                <a href="#" class="text-center group">
+                    <div class="w-16 h-16 bg-indigo-500 text-white rounded-full flex items-center justify-center mx-auto mb-2 hover:scale-110 transition-transform cursor-pointer group-hover:shadow-lg">
+                        <span class="text-2xl">📹</span>
+                    </div>
+                    <p class="text-sm text-gray-700 font-medium group-hover:text-red-700 transition-colors">Video Call</p>
+                </a>
+                <a href="tel:+13451234567" class="text-center group">
+                    <div class="w-16 h-16 bg-green-600 text-white rounded-full flex items-center justify-center mx-auto mb-2 hover:scale-110 transition-transform cursor-pointer group-hover:shadow-lg">
+                        <span class="text-2xl">📞</span>
+                    </div>
+                    <p class="text-sm text-gray-700 font-medium group-hover:text-red-700 transition-colors">Phone Call</p>
+                </a>
+                <a href="mailto:info@alhambrabank.ky" class="text-center group">
+                    <div class="w-16 h-16 bg-gray-600 text-white rounded-full flex items-center justify-center mx-auto mb-2 hover:scale-110 transition-transform cursor-pointer group-hover:shadow-lg">
+                        <span class="text-2xl">📧</span>
+                    </div>
+                    <p class="text-sm text-gray-700 font-medium group-hover:text-red-700 transition-colors">Email</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-red-200 text-red-800 py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-lg font-semibold mb-2">© 2025 Alhambra Bank & Trust. All Rights Reserved to alhambrabank.ky</p>
+            <p class="text-red-600">Excellence in Corporate Banking | Cayman Islands</p>
+        </div>
+    </footer>
+
+    <script>
+        // Carousel functionality
+        function initCarousel(carouselId, dotsId) {
+            const carousel = document.getElementById(carouselId);
+            const dotsContainer = document.getElementById(dotsId);
+            const items = carousel.children;
+            let currentIndex = 0;
+
+            // Create dots
+            for (let i = 0; i < items.length; i++) {
+                const dot = document.createElement('div');
+                dot.className = 'carousel-dot';
+                if (i === 0) dot.classList.add('active');
+                dot.addEventListener('click', () => goToSlide(i));
+                dotsContainer.appendChild(dot);
+            }
+
+            function goToSlide(index) {
+                currentIndex = index;
+                carousel.style.transform = `translateX(-${index * 100}%)`;
+                
+                // Update dots
+                const dots = dotsContainer.children;
+                for (let i = 0; i < dots.length; i++) {
+                    dots[i].classList.toggle('active', i === index);
+                }
+            }
+
+            // Auto-advance carousel
+            setInterval(() => {
+                currentIndex = (currentIndex + 1) % items.length;
+                goToSlide(currentIndex);
+            }, 4000);
+        }
+
+        // Initialize carousels
+        document.addEventListener('DOMContentLoaded', () => {
+            initCarousel('alhambraCarousel', 'carouselDots');
+            initCarousel('caymanCarousel', 'caymanCarouselDots');
+        });
+    </script>
+</body>
+</html>
