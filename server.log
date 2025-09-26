@@ -1,11 +1,67 @@
 nohup: ignoring input
-127.0.0.1 - - [25/Sep/2025 22:27:41] "GET / HTTP/1.1" 200 -
-10.130.108.1 - - [25/Sep/2025 22:27:45] "GET / HTTP/1.1" 200 -
-10.130.108.1 - - [25/Sep/2025 22:27:46] code 404, message File not found
-10.130.108.1 - - [25/Sep/2025 22:27:46] "GET /favicon.ico HTTP/1.1" 404 -
-10.130.108.1 - - [25/Sep/2025 22:28:04] "HEAD / HTTP/1.1" 200 -
-10.130.108.1 - - [25/Sep/2025 22:28:04] "GET / HTTP/1.1" 200 -
-10.130.108.1 - - [25/Sep/2025 22:28:05] "GET / HTTP/1.1" 200 -
-10.130.108.1 - - [25/Sep/2025 22:28:20] "GET / HTTP/1.1" 200 -
-10.130.108.1 - - [25/Sep/2025 22:28:21] code 404, message File not found
-10.130.108.1 - - [25/Sep/2025 22:28:21] "GET /favicon.ico HTTP/1.1" 404 -
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/usr/lib/python3.11/http/server.py", line 1299, in <module>
+    test(
+  File "/usr/lib/python3.11/http/server.py", line 1246, in test
+    with ServerClass(addr, HandlerClass) as httpd:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/socketserver.py", line 456, in __init__
+    self.server_bind()
+  File "/usr/lib/python3.11/http/server.py", line 1293, in server_bind
+    return super().server_bind()
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/http/server.py", line 135, in server_bin127.0.0.1 - - [25/Sep/2025 22:39:00] "GET / HTTP/1.1" 200 -
+10.130.108.1 - - [25/Sep/2025 22:39:19] "GET /index.html HTTP/1.1" 200 -
+10.130.108.1 - - [25/Sep/2025 22:39:19] "GET /alhambra-court-detail.webp HTTP/1.1" 200 -
+10.130.108.1 - - [25/Sep/2025 22:39:19] "GET /alhambra-court-lions.jpg HTTP/1.1" 200 -
+10.130.108.1 - - [25/Sep/2025 22:39:19] "GET /alhambra-palace.jpeg HTTP/1.1" 200 -
+10.130.108.1 - - [25/Sep/2025 22:39:19] "GET /alhambra-architecture.jpg HTTP/1.1" 200 -
+10.130.108.1 - - [25/Sep/2025 22:39:19] "GET /ali-alsari-founder.jpg HTTP/1.1" 200 -
+10.130.108.1 - - [25/Sep/2025 22:39:19] "GET /cayman-paradise.png HTTP/1.1" 200 -
+10.130.108.1 - - [25/Sep/2025 22:39:19] "GET /cayman-beach.jpg HTTP/1.1" 200 -
+10.130.108.1 - - [25/Sep/2025 22:40:25] "HEAD /index.html HTTP/1.1" 200 -
+10.130.108.1 - - [25/Sep/2025 22:40:25] "GET /index.html HTTP/1.1" 200 -
+10.130.108.1 - - [25/Sep/2025 22:40:25] "GET /index.html HTTP/1.1" 200 -
+10.130.108.1 - - [25/Sep/2025 22:40:25] "GET /alhambra-court-detail.webp HTTP/1.1" 200 -
+10.130.108.1 - - [25/Sep/2025 22:40:25] "GET /alhambra-court-lions.jpg HTTP/1.1" 200 -
+10.130.108.1 - - [25/Sep/2025 22:40:25] "GET /alhambra-palace.jpeg HTTP/1.1" 200 -
+10.130.108.1 - - [25/Sep/2025 22:40:25] "GET /alhambra-architecture.jpg HTTP/1.1" 200 -
+10.130.108.1 - - [25/Sep/2025 22:40:25] "GET /ali-alsari-founder.jpg HTTP/1.1" 200 -
+10.130.108.1 - - [25/Sep/2025 22:40:25] "GET /cayman-paradise.png HTTP/1.1" 200 -
+10.130.108.1 - - [25/Sep/2025 22:40:25] "GET /cayman-beach.jpg HTTP/1.1" 200 -
+10.130.108.1 - - [25/Sep/2025 22:41:01] "GET /index.html HTTP/1.1" 304 -
+10.130.108.1 - - [25/Sep/2025 22:41:01] "GET /alhambra-court-detail.webp HTTP/1.1" 304 -
+10.130.108.1 - - [25/Sep/2025 22:41:01] "GET /alhambra-court-lions.jpg HTTP/1.1" 304 -
+10.130.108.1 - - [25/Sep/2025 22:41:01] "GET /alhambra-architecture.jpg HTTP/1.1" 304 -
+10.130.108.1 - - [25/Sep/2025 22:41:01] "GET /alhambra-palace.jpeg HTTP/1.1" 304 -
+10.130.108.1 - - [25/Sep/2025 22:41:01] "GET /ali-alsari-founder.jpg HTTP/1.1" 304 -
+10.130.108.1 - - [25/Sep/2025 22:41:01] "GET /cayman-beach.jpg HTTP/1.1" 304 -
+10.130.108.1 - - [25/Sep/2025 22:41:01] "GET /cayman-paradise.png HTTP/1.1" 304 -
+10.130.108.1 - - [25/Sep/2025 22:41:58] "HEAD /index.html HTTP/1.1" 200 -
+10.130.108.1 - - [25/Sep/2025 22:41:58] "GET /index.html HTTP/1.1" 200 -
+10.130.108.1 - - [25/Sep/2025 22:41:58] "GET /index.html HTTP/1.1" 200 -
+10.130.108.1 - - [25/Sep/2025 22:41:58] "GET /alhambra-court-lions.jpg HTTP/1.1" 200 -
+10.130.108.1 - - [25/Sep/2025 22:41:58] "GET /alhambra-court-detail.webp HTTP/1.1" 200 -
+10.130.108.1 - - [25/Sep/2025 22:41:58] "GET /alhambra-palace.jpeg HTTP/1.1" 200 -
+10.130.108.1 - - [25/Sep/2025 22:41:58] "GET /alhambra-architecture.jpg HTTP/1.1" 200 -
+10.130.108.1 - - [25/Sep/2025 22:41:58] "GET /ali-alsari-founder.jpg HTTP/1.1" 200 -
+10.130.108.1 - - [25/Sep/2025 22:41:58] "GET /cayman-paradise.png HTTP/1.1" 200 -
+10.130.108.1 - - [25/Sep/2025 22:41:58] "GET /cayman-beach.jpg HTTP/1.1" 200 -
+10.130.108.1 - - [25/Sep/2025 22:42:19] "GET /index.html HTTP/1.1" 200 -
+10.130.108.1 - - [25/Sep/2025 22:42:19] "GET /alhambra-court-detail.webp HTTP/1.1" 200 -
+10.130.108.1 - - [25/Sep/2025 22:42:19] "GET /alhambra-court-lions.jpg HTTP/1.1" 200 -
+10.130.108.1 - - [25/Sep/2025 22:42:19] "GET /alhambra-palace.jpeg HTTP/1.1" 200 -
+10.130.108.1 - - [25/Sep/2025 22:42:19] "GET /cayman-paradise.png HTTP/1.1" 200 -
+10.130.108.1 - - [25/Sep/2025 22:42:19] "GET /ali-alsari-founder.jpg HTTP/1.1" 200 -
+10.130.108.1 - - [25/Sep/2025 22:42:19] "GET /cayman-beach.jpg HTTP/1.1" 200 -
+10.130.108.1 - - [25/Sep/2025 22:42:19] "GET /alhambra-architecture.jpg HTTP/1.1" 200 -
+10.130.108.1 - - [25/Sep/2025 22:43:50] "GET /index.html HTTP/1.1" 304 -
+10.130.108.1 - - [25/Sep/2025 22:43:50] "GET /alhambra-court-lions.jpg HTTP/1.1" 304 -
+10.130.108.1 - - [25/Sep/2025 22:43:50] "GET /alhambra-court-detail.webp HTTP/1.1" 304 -
+10.130.108.1 - - [25/Sep/2025 22:43:50] "GET /alhambra-palace.jpeg HTTP/1.1" 304 -
+10.130.108.1 - - [25/Sep/2025 22:43:50] "GET /alhambra-architecture.jpg HTTP/1.1" 304 -
+10.130.108.1 - - [25/Sep/2025 22:43:50] "GET /ali-alsari-founder.jpg HTTP/1.1" 304 -
+10.130.108.1 - - [25/Sep/2025 22:43:50] "GET /cayman-paradise.png HTTP/1.1" 304 -
+10.130.108.1 - - [25/Sep/2025 22:43:50] "GET /cayman-beach.jpg HTTP/1.1" 304 -
