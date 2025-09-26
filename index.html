@@ -7,7 +7,7 @@
     
     <!-- SEO Meta Tags -->
     <meta name="description" content="Alhambra Bank & Trust - Premier private banking solutions for high-net-worth individuals and corporations worldwide. Licensed by CIMA in the Cayman Islands.">
-    <meta name="keywords" content="private banking, wealth management, Cayman Islands, offshore banking, asset protection, Alhambra Bank, CIMA licensed">
+    <meta name="keywords" content="private banking, wealth management, Cayman Islands, offshore banking, asset protection, Alhambra Bank, CIMA licensed, Shariah compliant, citizenship by investment">
     <meta name="author" content="Alhambra Bank & Trust">
     <meta name="robots" content="index, follow">
     
@@ -39,7 +39,7 @@
             "streetAddress": "64 Earth Close, 2A3 Landmark Square",
             "addressLocality": "Seven Mile Beach",
             "addressRegion": "Grand Cayman",
-            "postalCode": "KY1-1205",
+            "postalCode": "KY1-1202",
             "addressCountry": "KY"
         },
         "telephone": "+1-345-743-1413",
@@ -53,15 +53,17 @@
     <!-- Custom Styles -->
     <style>
         :root {
-            --alhambra-red: #8B1538;
-            --alhambra-dark: #6B1229;
-            --alhambra-light: #A61E42;
+            --alhambra-red: #B91C3C;
+            --alhambra-dark: #991B1B;
+            --alhambra-light: #DC2626;
+            --alhambra-lighter: #EF4444;
         }
         
         .alhambra-red { color: var(--alhambra-red); }
         .bg-alhambra-red { background-color: var(--alhambra-red); }
         .bg-alhambra-dark { background-color: var(--alhambra-dark); }
         .bg-alhambra-light { background-color: var(--alhambra-light); }
+        .bg-alhambra-lighter { background-color: var(--alhambra-lighter); }
         .border-alhambra-red { border-color: var(--alhambra-red); }
         
         /* Market Ticker Animation */
@@ -109,6 +111,7 @@
             background-color: var(--alhambra-dark);
             transform: translateY(-2px);
             transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(185, 28, 60, 0.3);
         }
         
         .btn-outline-hover:hover {
@@ -116,30 +119,92 @@
             color: white;
             transform: translateY(-2px);
             transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(185, 28, 60, 0.3);
         }
         
         /* Navigation Hover */
         .nav-item:hover {
-            background-color: rgba(139, 21, 56, 0.1);
+            background-color: rgba(185, 28, 60, 0.1);
             transform: translateY(-1px);
             transition: all 0.3s ease;
+            border-radius: 8px;
+        }
+        
+        .nav-item.active {
+            background-color: var(--alhambra-red);
+            color: white;
+            border-radius: 8px;
         }
         
         /* Social Media Hover */
         .social-hover:hover {
-            transform: scale(1.1);
+            transform: scale(1.1) rotate(5deg);
             transition: transform 0.3s ease;
         }
         
         /* Card Hover */
         .card-hover:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
             transition: all 0.3s ease;
+        }
+        
+        /* Tab System */
+        .tab-content {
+            display: none;
+            animation: slideIn 0.3s ease-in-out;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .tab-button {
+            transition: all 0.3s ease;
+        }
+        
+        .tab-button:hover {
+            background-color: var(--alhambra-light);
+            transform: translateY(-2px);
+        }
+        
+        .tab-button.active {
+            background-color: var(--alhambra-red);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(185, 28, 60, 0.3);
+        }
+        
+        /* Pulse Animation for Updates */
+        .pulse-red {
+            animation: pulseRed 2s infinite;
+        }
+        
+        @keyframes pulseRed {
+            0%, 100% { background-color: var(--alhambra-red); }
+            50% { background-color: var(--alhambra-light); }
+        }
+        
+        /* Gradient Text */
+        .gradient-text {
+            background: linear-gradient(45deg, var(--alhambra-red), var(--alhambra-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
     </style>
 </head>
 <body class="bg-gray-50">
+    <!-- Updates Banner -->
+    <div class="bg-alhambra-red text-white py-2 text-center pulse-red">
+        <p class="text-sm font-semibold">📈 Updates: Get Higher Interest Rate in Your Account with Alhambra Bank and Trust</p>
+    </div>
+
     <!-- Market Ticker -->
     <div class="bg-white border-b border-gray-200 overflow-hidden">
         <div class="ticker-scroll whitespace-nowrap py-2 text-sm">
@@ -161,23 +226,26 @@
             <div class="flex items-center justify-between">
                 <!-- Logo -->
                 <div class="flex items-center space-x-3">
-                    <img src="abt-logo-original.png" alt="Alhambra Bank & Trust" class="h-12 w-auto">
+                    <img src="abt-logo-original.png" alt="Alhambra Bank & Trust" class="h-12 w-auto hover-scale">
                     <div>
                         <h1 class="text-xl font-bold">Alhambra Bank & Trust</h1>
                         <p class="text-sm opacity-90">Excellence in Corporate Banking</p>
                     </div>
                 </div>
                 
-                <!-- Language Selector -->
+                <!-- Language Selector & Account -->
                 <div class="flex items-center space-x-4">
-                    <select class="bg-white text-gray-800 px-3 py-1 rounded border hover-shadow">
+                    <select class="bg-white text-gray-800 px-3 py-1 rounded border hover-shadow cursor-pointer">
                         <option>🇺🇸 English</option>
                         <option>🇪🇸 Español</option>
                         <option>🇸🇦 العربية</option>
                         <option>🇨🇳 中文</option>
                     </select>
                     <button class="bg-white text-alhambra-red px-4 py-2 rounded font-semibold btn-hover hover-shadow">
-                        Open Account ▼
+                        Open New Account ▼
+                    </button>
+                    <button class="border border-white text-white px-4 py-2 rounded font-semibold btn-outline-hover hover-shadow">
+                        LOG IN
                     </button>
                 </div>
             </div>
@@ -189,272 +257,591 @@
         <div class="container mx-auto px-4">
             <div class="flex items-center justify-between py-3">
                 <div class="flex space-x-1">
-                    <button class="nav-item px-4 py-2 rounded alhambra-red font-medium">Home</button>
-                    <button class="nav-item px-4 py-2 rounded text-gray-700 hover:text-alhambra-red font-medium">Asset Protection & Private Wealth Planning</button>
-                    <button class="nav-item px-4 py-2 rounded text-gray-700 hover:text-alhambra-red font-medium">Shariah Compliant Investments</button>
-                    <button class="nav-item px-4 py-2 rounded text-gray-700 hover:text-alhambra-red font-medium">Citizenship by Investment</button>
-                    <button class="nav-item px-4 py-2 rounded text-gray-700 hover:text-alhambra-red font-medium">Market Insights</button>
-                    <button class="nav-item px-4 py-2 rounded text-gray-700 hover:text-alhambra-red font-medium">About Us</button>
+                    <button class="nav-item active px-4 py-2 font-medium" onclick="showTab('home')">Home</button>
+                    <button class="nav-item px-4 py-2 text-gray-700 hover:text-alhambra-red font-medium" onclick="showTab('asset-protection')">Asset Protection & Private Wealth Planning</button>
+                    <button class="nav-item px-4 py-2 text-gray-700 hover:text-alhambra-red font-medium" onclick="showTab('shariah-investments')">Shariah Compliant Investments</button>
+                    <button class="nav-item px-4 py-2 text-gray-700 hover:text-alhambra-red font-medium" onclick="showTab('citizenship-investment')">Citizenship by Investment</button>
+                    <button class="nav-item px-4 py-2 text-gray-700 hover:text-alhambra-red font-medium" onclick="showTab('market-insights')">Market Insights</button>
+                    <button class="nav-item px-4 py-2 text-gray-700 hover:text-alhambra-red font-medium" onclick="showTab('about-us')">About Us</button>
                 </div>
                 <div class="flex space-x-3">
-                    <button class="bg-alhambra-red text-white px-4 py-2 rounded font-semibold btn-hover hover-shadow">Schedule a Call</button>
-                    <button class="border border-alhambra-red text-alhambra-red px-4 py-2 rounded font-semibold btn-outline-hover hover-shadow">Chat with us</button>
+                    <button class="bg-alhambra-red text-white px-4 py-2 rounded font-semibold btn-hover hover-shadow" onclick="scheduleCall()">Schedule a Call</button>
+                    <button class="border border-alhambra-red text-alhambra-red px-4 py-2 rounded font-semibold btn-outline-hover hover-shadow" onclick="chatWithUs()">Chat with us</button>
                 </div>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="bg-gradient-to-r from-gray-50 to-gray-100 py-16">
-        <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div>
-                    <h1 class="text-5xl font-bold alhambra-red mb-4">
-                        MANAGING<br>
-                        YOUR<br>
-                        WEALTH
-                    </h1>
-                    <h2 class="text-4xl font-bold alhambra-red mb-6">
-                        PROTECTING<br>
-                        YOUR<br>
-                        <em class="italic">LEGACY</em>
-                    </h2>
-                    <p class="text-lg text-gray-700 mb-8 leading-relaxed">
-                        We are dedicated to delivering impartial financial solutions and diversification strategies designed to protect and enhance your wealth. By emphasizing geopolitical neutrality and cross-border resilience, we develop flexible strategies that empower you to navigate market fluctuations with confidence.
-                    </p>
-                    <div class="flex space-x-4">
-                        <button class="bg-alhambra-red text-white px-8 py-3 rounded-lg font-semibold btn-hover hover-shadow">Schedule a Call</button>
-                        <button class="border-2 border-alhambra-red text-alhambra-red px-8 py-3 rounded-lg font-semibold btn-outline-hover hover-shadow">Chat with us</button>
-                    </div>
-                </div>
-                
-                <!-- Image Carousel -->
-                <div class="carousel-container relative h-96 rounded-lg overflow-hidden shadow-lg">
-                    <div class="carousel-slide active">
-                        <img src="alhambra-court-lions.jpg" alt="Court of the Lions" class="w-full h-full object-cover">
-                        <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-4">
-                            <h3 class="text-xl font-semibold">Court of the Lions</h3>
+    <!-- Main Content Container -->
+    <div id="main-content">
+        
+        <!-- Home Tab Content -->
+        <div id="home" class="tab-content active">
+            <!-- Hero Section -->
+            <section class="bg-gradient-to-r from-gray-50 to-gray-100 py-16">
+                <div class="container mx-auto px-4">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                        <div>
+                            <h1 class="text-5xl font-bold gradient-text mb-4">
+                                MANAGING<br>
+                                YOUR<br>
+                                WEALTH
+                            </h1>
+                            <h2 class="text-4xl font-bold gradient-text mb-6">
+                                PROTECTING<br>
+                                YOUR<br>
+                                <em class="italic">LEGACY</em>
+                            </h2>
+                            <p class="text-lg text-gray-700 mb-8 leading-relaxed">
+                                We are dedicated to delivering impartial financial solutions and diversification strategies designed to protect and enhance your wealth. By emphasizing geopolitical neutrality and cross-border resilience, we develop flexible strategies that empower you to navigate market fluctuations with confidence, securing your financial future.
+                            </p>
+                            <div class="flex space-x-4">
+                                <button class="bg-alhambra-red text-white px-8 py-3 rounded-lg font-semibold btn-hover hover-shadow" onclick="scheduleCall()">Schedule a Call</button>
+                                <button class="border-2 border-alhambra-red text-alhambra-red px-8 py-3 rounded-lg font-semibold btn-outline-hover hover-shadow" onclick="chatWithUs()">Chat with us</button>
+                            </div>
                         </div>
-                    </div>
-                    <div class="carousel-slide">
-                        <img src="alhambra-court-detail.webp" alt="Court of the Lions - Detail" class="w-full h-full object-cover">
-                        <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-4">
-                            <h3 class="text-xl font-semibold">Court of the Lions - Detail</h3>
-                        </div>
-                    </div>
-                    <div class="carousel-slide">
-                        <img src="alhambra-palace.jpeg" alt="Palace Courtyard" class="w-full h-full object-cover">
-                        <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-4">
-                            <h3 class="text-xl font-semibold">Palace Courtyard</h3>
-                        </div>
-                    </div>
-                    <div class="carousel-slide">
-                        <img src="alhambra-architecture.jpg" alt="Architectural Marvel" class="w-full h-full object-cover">
-                        <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-4">
-                            <h3 class="text-xl font-semibold">Architectural Marvel</h3>
-                        </div>
-                    </div>
-                    
-                    <!-- Carousel Dots -->
-                    <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-2">
-                        <button class="carousel-dot w-3 h-3 rounded-full bg-white opacity-50" data-slide="0"></button>
-                        <button class="carousel-dot w-3 h-3 rounded-full bg-white opacity-50" data-slide="1"></button>
-                        <button class="carousel-dot w-3 h-3 rounded-full bg-white opacity-50" data-slide="2"></button>
-                        <button class="carousel-dot w-3 h-3 rounded-full bg-white opacity-50" data-slide="3"></button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ALHAMBRA BANK: Open to the WORLD Section -->
-    <section class="py-16 bg-white">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-4xl font-bold alhambra-red mb-8">
-                <span class="alhambra-red">ALHAMBRA BANK:</span> Open to the WORLD,<br>
-                no one should be left UNBANKED!
-            </h2>
-        </div>
-    </section>
-
-    <!-- Why Alhambra Bank & Trust -->
-    <section class="py-16 bg-gray-50">
-        <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold alhambra-red text-center mb-12">Why Alhambra Bank & Trust</h2>
-            
-            <div class="mb-12">
-                <h3 class="text-2xl font-bold alhambra-red text-center mb-8">Your Caring Partner in Wealth Management and Private Banking</h3>
-                
-                <div class="max-w-4xl mx-auto text-lg text-gray-700 leading-relaxed space-y-6">
-                    <p>At Alhambra Bank & Trust, we recognize that high-net-worth individuals seek more than just financial services; they seek a trusted partner who can guide them with empathy and expertise. We take pride in crafting personalized financial solutions that align with your unique aspirations, always prioritizing accountability, transparency, and integrity to help you preserve and grow your estate.</p>
-                    
-                    <p>Situated in the stunning Cayman Islands, we offer you the ideal blend of global reach and local insight. With decades of experience, our team expertly navigates the complexities of the financial landscape to provide you with exceptional, individualized service.</p>
-                    
-                    <p>At Alhambra Bank & Trust, we believe in nurturing lasting relationships that extend beyond transactions. Our white-glove service is centered on fostering sustainable growth while ensuring you receive the personalized attention you deserve. As a regulated entity under the Cayman Islands Monetary Authority, we uphold the highest standards of compliance and discretion, building trust and loyalty among our clients.</p>
-                </div>
-            </div>
-
-            <!-- Four Principles -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="bg-white p-6 rounded-lg shadow-md card-hover text-center">
-                    <div class="text-4xl mb-4">🏛️</div>
-                    <h3 class="text-xl font-bold alhambra-red mb-4">Client-Centered Integrity</h3>
-                    <p class="text-gray-700">At the core of our mission lies an unwavering dedication to our clients. We prioritize integrity, transparency, and ethical conduct.</p>
-                </div>
-                
-                <div class="bg-white p-6 rounded-lg shadow-md card-hover text-center">
-                    <div class="text-4xl mb-4">🌍</div>
-                    <h3 class="text-xl font-bold alhambra-red mb-4">Facilitating Financial Access</h3>
-                    <p class="text-gray-700">We are resolutely committed to dismantling obstacles. Through innovation and collaboration, we aim to empower individuals and communities.</p>
-                </div>
-                
-                <div class="bg-white p-6 rounded-lg shadow-md card-hover text-center">
-                    <div class="text-4xl mb-4">⚖️</div>
-                    <h3 class="text-xl font-bold alhambra-red mb-4">Global Stewardship</h3>
-                    <p class="text-gray-700">We embrace our responsibilities as global citizens, standing resolutely for human rights and sustainable practices in all our endeavors.</p>
-                </div>
-                
-                <div class="bg-white p-6 rounded-lg shadow-md card-hover text-center">
-                    <div class="text-4xl mb-4">🤝</div>
-                    <h3 class="text-xl font-bold alhambra-red mb-4">Promoting Inclusive Diversity</h3>
-                    <p class="text-gray-700">Diversity is fundamental to our culture. We cultivate an environment where every voice is valued and respected.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Our Services -->
-    <section class="py-16 bg-white">
-        <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold alhambra-red text-center mb-12">Our Services</h2>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-gray-50 p-8 rounded-lg shadow-md card-hover">
-                    <h3 class="text-2xl font-bold alhambra-red mb-4">Asset Protection & Private Wealth Planning</h3>
-                    <p class="text-gray-700 mb-6">Comprehensive wealth management solutions including investment management, trust services, and corporate services.</p>
-                    <div class="flex space-x-3">
-                        <button class="bg-alhambra-red text-white px-4 py-2 rounded font-semibold btn-hover hover-shadow">Learn More</button>
-                        <button class="border border-alhambra-red text-alhambra-red px-4 py-2 rounded font-semibold btn-outline-hover hover-shadow">Schedule a Call</button>
-                    </div>
-                </div>
-                
-                <div class="bg-gray-50 p-8 rounded-lg shadow-md card-hover">
-                    <h3 class="text-2xl font-bold alhambra-red mb-4">Shariah Compliant Investments</h3>
-                    <p class="text-gray-700 mb-6">Islamic banking solutions including Sukuk, Shariah-compliant funds, and Takaful insurance products.</p>
-                    <div class="flex space-x-3">
-                        <button class="bg-alhambra-red text-white px-4 py-2 rounded font-semibold btn-hover hover-shadow">Learn More</button>
-                        <button class="border border-alhambra-red text-alhambra-red px-4 py-2 rounded font-semibold btn-outline-hover hover-shadow">Schedule a Call</button>
-                    </div>
-                </div>
-                
-                <div class="bg-gray-50 p-8 rounded-lg shadow-md card-hover">
-                    <h3 class="text-2xl font-bold alhambra-red mb-4">Citizenship by Investment</h3>
-                    <p class="text-gray-700 mb-6">Second passport and residence programs, golden visas, and tax residence solutions.</p>
-                    <div class="flex space-x-3">
-                        <button class="bg-alhambra-red text-white px-4 py-2 rounded font-semibold btn-hover hover-shadow">Learn More</button>
-                        <button class="border border-alhambra-red text-alhambra-red px-4 py-2 rounded font-semibold btn-outline-hover hover-shadow">Schedule a Call</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Message from Our Founder -->
-    <section class="py-16 bg-gray-50">
-        <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold alhambra-red text-center mb-12">Message from Our Founder</h2>
-            
-            <div class="max-w-6xl mx-auto">
-                <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
-                    <!-- Founder Photo -->
-                    <div class="text-center">
-                        <div class="w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden border-4 border-alhambra-red shadow-lg hover-scale">
-                            <img src="ali-alsari-founder-official.jpg" alt="Ali Alsari" class="w-full h-full object-cover">
-                        </div>
-                        <h3 class="text-2xl font-bold alhambra-red">Ali Alsari</h3>
-                        <p class="text-gray-600 font-medium">Non-Executive Board Director</p>
-                    </div>
-                    
-                    <!-- Founder Message -->
-                    <div class="lg:col-span-2">
-                        <div class="space-y-6 text-lg text-gray-700 leading-relaxed">
-                            <blockquote class="border-l-4 border-alhambra-red pl-6 italic">
-                                "The decision to start Alhambra Bank was rooted in a fundamental belief that everyone deserves to be treated with dignity, respect, and fairness, regardless of their skin color, religion, sexual orientation, or any other defining trait. Traditional banking systems have often been criticized for perpetuating inequality, whether through discriminatory practices, restricted access for underserved groups, lack of access for marginalized communities, or biases in decision-making."
-                            </blockquote>
+                        
+                        <!-- Image Carousel -->
+                        <div class="carousel-container relative h-96 rounded-lg overflow-hidden shadow-lg">
+                            <div class="carousel-slide active">
+                                <img src="alhambra-court-lions.jpg" alt="Court of the Lions" class="w-full h-full object-cover">
+                                <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-4">
+                                    <h3 class="text-xl font-semibold">Court of the Lions</h3>
+                                </div>
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="alhambra-court-detail.webp" alt="Court of the Lions - Detail" class="w-full h-full object-cover">
+                                <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-4">
+                                    <h3 class="text-xl font-semibold">Court of the Lions - Detail</h3>
+                                </div>
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="alhambra-palace.jpeg" alt="Palace Courtyard" class="w-full h-full object-cover">
+                                <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-4">
+                                    <h3 class="text-xl font-semibold">Palace Courtyard</h3>
+                                </div>
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="alhambra-architecture.jpg" alt="Architectural Marvel" class="w-full h-full object-cover">
+                                <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-4">
+                                    <h3 class="text-xl font-semibold">Architectural Marvel</h3>
+                                </div>
+                            </div>
                             
-                            <blockquote class="border-l-4 border-alhambra-red pl-6 italic">
-                                "Alhambra Bank was established to disrupt these conventions and forge a financial institution that genuinely serves everyone on equal terms. Our mission is to create a secure, inclusive, and empowering environment where both individuals and businesses can flourish without the threat of discrimination or exclusion."
-                            </blockquote>
+                            <!-- Carousel Dots -->
+                            <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                                <button class="carousel-dot w-3 h-3 rounded-full bg-white opacity-50" data-slide="0"></button>
+                                <button class="carousel-dot w-3 h-3 rounded-full bg-white opacity-50" data-slide="1"></button>
+                                <button class="carousel-dot w-3 h-3 rounded-full bg-white opacity-50" data-slide="2"></button>
+                                <button class="carousel-dot w-3 h-3 rounded-full bg-white opacity-50" data-slide="3"></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ALHAMBRA BANK: Open to the WORLD Section -->
+            <section class="py-16 bg-white">
+                <div class="container mx-auto px-4 text-center">
+                    <h2 class="text-4xl font-bold gradient-text mb-8">
+                        <span class="alhambra-red">ALHAMBRA BANK:</span> Open to the WORLD,<br>
+                        no one should be left UNBANKED!
+                    </h2>
+                </div>
+            </section>
+
+            <!-- Why Alhambra Bank & Trust -->
+            <section class="py-16 bg-gray-50">
+                <div class="container mx-auto px-4">
+                    <h2 class="text-4xl font-bold gradient-text text-center mb-12">Why Alhambra Bank & Trust</h2>
+                    
+                    <div class="mb-12">
+                        <h3 class="text-2xl font-bold alhambra-red text-center mb-8">Your Caring Partner in Wealth Management and Private Banking</h3>
+                        
+                        <div class="max-w-4xl mx-auto text-lg text-gray-700 leading-relaxed space-y-6">
+                            <p>At Alhambra Bank & Trust, we recognize that high-net-worth individuals seek more than just financial services; they seek a trusted partner who can guide them with empathy and expertise. We take pride in crafting personalized financial solutions that align with your unique aspirations, always prioritizing accountability, transparency, and integrity to help you preserve and grow your estate.</p>
+                            
+                            <p>Situated in the stunning Cayman Islands, we offer you the ideal blend of global reach and local insight. With decades of experience, our team expertly navigates the complexities of the financial landscape to provide you with exceptional, individualized service.</p>
+                            
+                            <p>At Alhambra Bank & Trust, we believe in nurturing lasting relationships that extend beyond transactions. Our white-glove service is centered on fostering sustainable growth while ensuring you receive the personalized attention you deserve. Our dedicated advisors are committed to offering clear, educational guidance, empowering you to make informed decisions at every stage of your financial journey. As a regulated entity under the Cayman Islands Monetary Authority, we uphold the highest standards of compliance and discretion, building trust and loyalty among our clients.</p>
                             
                             <div class="bg-alhambra-red text-white p-6 rounded-lg">
-                                <blockquote class="text-lg italic">
-                                    "Alhambra Bank is more than just a bank—it's a movement toward a world where financial institutions reflect the values of fairness, equality, and respect for all. We are here to redefine what it means to be a bank, one that prioritizes people over profit and inclusion over exclusion."
-                                </blockquote>
+                                <h4 class="text-xl font-bold mb-4">Generational Wealth Stewardship</h4>
+                                <p>For generations, Alhambra Bank & Trust has been a devoted steward of wealth, embracing adaptive strategies and innovative solutions rooted in integrity. We invite you to partner with us to enhance your financial future, leveraging our global network, tailored wealth management expertise, and legacy planning services designed to safeguard your family's prosperity.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Vision & Mission -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                        <div class="bg-white p-8 rounded-lg shadow-md card-hover">
+                            <h3 class="text-2xl font-bold alhambra-red mb-4">Our Vision</h3>
+                            <p class="text-gray-700">We envision ourselves as a trusted global partner in wealth management, devoted to guiding individuals, corporations, and institutions on their paths to sustainable financial prosperity and stability, even as the economic landscape continues to evolve.</p>
+                        </div>
+                        
+                        <div class="bg-white p-8 rounded-lg shadow-md card-hover">
+                            <h3 class="text-2xl font-bold alhambra-red mb-4">Our Mission</h3>
+                            <p class="text-gray-700">We are dedicated to delivering impartial financial solutions and diversification strategies designed to protect and enhance your wealth. By emphasizing geopolitical neutrality and cross-border resilience, we develop flexible strategies that empower you to navigate market fluctuations with confidence.</p>
+                        </div>
+                    </div>
+
+                    <!-- Four Principles -->
+                    <h3 class="text-3xl font-bold gradient-text text-center mb-8">Our Fundamental Principles</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                        <div class="bg-white p-6 rounded-lg shadow-md card-hover text-center">
+                            <div class="text-4xl mb-4">🏛️</div>
+                            <h3 class="text-xl font-bold alhambra-red mb-4">Client-Centered Integrity</h3>
+                            <p class="text-gray-700">At the core of our mission lies an unwavering dedication to our clients. We prioritize integrity, transparency, and ethical conduct, ensuring that every decision we make is focused on building trust and delivering genuine, meaningful value.</p>
+                        </div>
+                        
+                        <div class="bg-white p-6 rounded-lg shadow-md card-hover text-center">
+                            <div class="text-4xl mb-4">🌍</div>
+                            <h3 class="text-xl font-bold alhambra-red mb-4">Facilitating Financial Access</h3>
+                            <p class="text-gray-700">We recognize the challenges many individuals face in accessing financial services, and we are resolutely committed to dismantling these obstacles. Through innovation and collaboration, we aim to empower individuals and communities.</p>
+                        </div>
+                        
+                        <div class="bg-white p-6 rounded-lg shadow-md card-hover text-center">
+                            <div class="text-4xl mb-4">⚖️</div>
+                            <h3 class="text-xl font-bold alhambra-red mb-4">Global Stewardship</h3>
+                            <p class="text-gray-700">We embrace our responsibilities as global citizens, standing resolutely for human rights and sustainable practices in all our endeavors. Our commitment to dignity, equity, and compliance with international legal standards drives us to foster positive change.</p>
+                        </div>
+                        
+                        <div class="bg-white p-6 rounded-lg shadow-md card-hover text-center">
+                            <div class="text-4xl mb-4">🤝</div>
+                            <h3 class="text-xl font-bold alhambra-red mb-4">Promoting Inclusive Diversity</h3>
+                            <p class="text-gray-700">Diversity is more than a value; it is a fundamental aspect of our culture. We are dedicated to cultivating an environment where every voice is valued and respected, promoting innovation and ensuring equal opportunities.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Our Services -->
+            <section class="py-16 bg-white">
+                <div class="container mx-auto px-4">
+                    <h2 class="text-4xl font-bold gradient-text text-center mb-12">Our Services</h2>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div class="bg-gray-50 p-8 rounded-lg shadow-md card-hover">
+                            <h3 class="text-2xl font-bold alhambra-red mb-4">Asset Protection & Private Wealth Planning</h3>
+                            <p class="text-gray-700 mb-6">Comprehensive wealth management solutions including investment management, trust services, and corporate services.</p>
+                            <div class="flex space-x-3">
+                                <button class="bg-alhambra-red text-white px-4 py-2 rounded font-semibold btn-hover hover-shadow" onclick="showTab('asset-protection')">Learn More</button>
+                                <button class="border border-alhambra-red text-alhambra-red px-4 py-2 rounded font-semibold btn-outline-hover hover-shadow" onclick="scheduleCall()">Schedule a Call</button>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-8 rounded-lg shadow-md card-hover">
+                            <h3 class="text-2xl font-bold alhambra-red mb-4">Shariah Compliant Investments</h3>
+                            <p class="text-gray-700 mb-6">Islamic banking solutions including Sukuk, Shariah-compliant funds, and Takaful insurance products.</p>
+                            <div class="flex space-x-3">
+                                <button class="bg-alhambra-red text-white px-4 py-2 rounded font-semibold btn-hover hover-shadow" onclick="showTab('shariah-investments')">Learn More</button>
+                                <button class="border border-alhambra-red text-alhambra-red px-4 py-2 rounded font-semibold btn-outline-hover hover-shadow" onclick="scheduleCall()">Schedule a Call</button>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-8 rounded-lg shadow-md card-hover">
+                            <h3 class="text-2xl font-bold alhambra-red mb-4">Citizenship by Investment</h3>
+                            <p class="text-gray-700 mb-6">Second passport and residence programs, golden visas, and tax residence solutions.</p>
+                            <div class="flex space-x-3">
+                                <button class="bg-alhambra-red text-white px-4 py-2 rounded font-semibold btn-hover hover-shadow" onclick="showTab('citizenship-investment')">Learn More</button>
+                                <button class="border border-alhambra-red text-alhambra-red px-4 py-2 rounded font-semibold btn-outline-hover hover-shadow" onclick="scheduleCall()">Schedule a Call</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Message from Our Founder -->
+            <section class="py-16 bg-gray-50">
+                <div class="container mx-auto px-4">
+                    <h2 class="text-4xl font-bold gradient-text text-center mb-12">Message from Our Founder</h2>
+                    
+                    <div class="max-w-6xl mx-auto">
+                        <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
+                            <!-- Founder Photo -->
+                            <div class="text-center">
+                                <div class="w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden border-4 border-alhambra-red shadow-lg hover-scale">
+                                    <img src="ali-alsari-founder-official.jpg" alt="Ali Alsari" class="w-full h-full object-cover">
+                                </div>
+                                <h3 class="text-2xl font-bold alhambra-red">Ali Alsari</h3>
+                                <p class="text-gray-600 font-medium">Non-Executive Board Director</p>
                             </div>
                             
-                            <div class="text-right">
-                                <p class="font-semibold alhambra-red">Sincerely,</p>
-                                <p class="font-bold alhambra-red">Ali Alsari</p>
-                                <p class="text-gray-600">Non-Executive Board Director</p>
+                            <!-- Founder Message -->
+                            <div class="lg:col-span-2">
+                                <div class="space-y-6 text-lg text-gray-700 leading-relaxed">
+                                    <blockquote class="border-l-4 border-alhambra-red pl-6 italic">
+                                        "The decision to start Alhambra Bank was rooted in a fundamental belief that everyone deserves to be treated with dignity, respect, and fairness, regardless of their skin color, religion, sexual orientation, or any other defining trait. Traditional banking systems have often been criticized for perpetuating inequality, whether through discriminatory practices, restricted access for underserved groups, lack of access for marginalized communities, or biases in decision-making."
+                                    </blockquote>
+                                    
+                                    <blockquote class="border-l-4 border-alhambra-red pl-6 italic">
+                                        "Alhambra Bank was established to disrupt these conventions and forge a financial institution that genuinely serves everyone on equal terms. Our mission is to create a secure, inclusive, and empowering environment where both individuals and businesses can flourish without the threat of discrimination or exclusion."
+                                    </blockquote>
+                                    
+                                    <div class="bg-alhambra-red text-white p-6 rounded-lg">
+                                        <blockquote class="text-lg italic">
+                                            "Alhambra Bank is more than just a bank—it's a movement toward a world where financial institutions reflect the values of fairness, equality, and respect for all. We are here to redefine what it means to be a bank, one that prioritizes people over profit and inclusion over exclusion."
+                                        </blockquote>
+                                    </div>
+                                    
+                                    <div class="text-right">
+                                        <p class="font-semibold alhambra-red">Sincerely,</p>
+                                        <p class="font-bold alhambra-red">Ali Alsari</p>
+                                        <p class="text-gray-600">Non-Executive Board Director</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
+            </section>
 
-    <!-- Banking in Paradise -->
-    <section class="py-16 bg-white">
-        <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold alhambra-red text-center mb-12">Banking in Paradise</h2>
-            
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div>
-                    <h3 class="text-2xl font-bold alhambra-red mb-6">Why Cayman Islands?</h3>
-                    <p class="text-lg text-gray-700 mb-6 leading-relaxed">
-                        Located in the prestigious Cayman Islands, we offer world-class banking services in one of the world's most respected financial centers. Our strategic location provides unparalleled access to global markets while maintaining the highest standards of financial privacy and regulatory compliance.
-                    </p>
+            <!-- Banking in Paradise -->
+            <section class="py-16 bg-white">
+                <div class="container mx-auto px-4">
+                    <h2 class="text-4xl font-bold gradient-text text-center mb-12">Banking in Paradise</h2>
                     
-                    <ul class="space-y-3 text-gray-700">
-                        <li class="flex items-center"><span class="w-2 h-2 bg-alhambra-red rounded-full mr-3"></span>Zero corporate and personal income tax</li>
-                        <li class="flex items-center"><span class="w-2 h-2 bg-alhambra-red rounded-full mr-3"></span>Political and economic stability</li>
-                        <li class="flex items-center"><span class="w-2 h-2 bg-alhambra-red rounded-full mr-3"></span>Strong regulatory framework</li>
-                        <li class="flex items-center"><span class="w-2 h-2 bg-alhambra-red rounded-full mr-3"></span>English common law jurisdiction</li>
-                        <li class="flex items-center"><span class="w-2 h-2 bg-alhambra-red rounded-full mr-3"></span>No exchange controls</li>
-                    </ul>
-                </div>
-                
-                <!-- Cayman Islands Carousel -->
-                <div class="carousel-container relative h-96 rounded-lg overflow-hidden shadow-lg">
-                    <div class="carousel-slide active" id="cayman-carousel">
-                        <img src="cayman-beach.jpg" alt="Seven Mile Beach" class="w-full h-full object-cover">
-                        <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-4">
-                            <h3 class="text-xl font-semibold">Seven Mile Beach</h3>
-                            <p class="text-sm">Grand Cayman Island</p>
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                        <div>
+                            <h3 class="text-2xl font-bold alhambra-red mb-6">Why Cayman Islands?</h3>
+                            <p class="text-lg text-gray-700 mb-6 leading-relaxed">
+                                Located in the prestigious Cayman Islands, we offer world-class banking services in one of the world's most respected financial centers. Our strategic location provides unparalleled access to global markets while maintaining the highest standards of financial privacy and regulatory compliance.
+                            </p>
+                            
+                            <ul class="space-y-3 text-gray-700">
+                                <li class="flex items-center"><span class="w-2 h-2 bg-alhambra-red rounded-full mr-3"></span>Zero corporate and personal income tax</li>
+                                <li class="flex items-center"><span class="w-2 h-2 bg-alhambra-red rounded-full mr-3"></span>Political and economic stability</li>
+                                <li class="flex items-center"><span class="w-2 h-2 bg-alhambra-red rounded-full mr-3"></span>Strong regulatory framework</li>
+                                <li class="flex items-center"><span class="w-2 h-2 bg-alhambra-red rounded-full mr-3"></span>English common law jurisdiction</li>
+                                <li class="flex items-center"><span class="w-2 h-2 bg-alhambra-red rounded-full mr-3"></span>No exchange controls</li>
+                            </ul>
+                        </div>
+                        
+                        <!-- Cayman Islands Carousel -->
+                        <div class="carousel-container relative h-96 rounded-lg overflow-hidden shadow-lg">
+                            <div class="carousel-slide active" id="cayman-carousel">
+                                <img src="cayman-beach.jpg" alt="Seven Mile Beach" class="w-full h-full object-cover">
+                                <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-4">
+                                    <h3 class="text-xl font-semibold">Seven Mile Beach</h3>
+                                    <p class="text-sm">Grand Cayman Island</p>
+                                </div>
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="cayman-paradise.png" alt="Grand Cayman Beach" class="w-full h-full object-cover">
+                                <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-4">
+                                    <h3 class="text-xl font-semibold">Grand Cayman Beach</h3>
+                                </div>
+                            </div>
+                            
+                            <!-- Carousel Dots -->
+                            <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                                <button class="cayman-dot w-3 h-3 rounded-full bg-white opacity-50" data-slide="0"></button>
+                                <button class="cayman-dot w-3 h-3 rounded-full bg-white opacity-50" data-slide="1"></button>
+                            </div>
                         </div>
                     </div>
-                    <div class="carousel-slide">
-                        <img src="cayman-paradise.png" alt="Grand Cayman Beach" class="w-full h-full object-cover">
-                        <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-4">
-                            <h3 class="text-xl font-semibold">Grand Cayman Beach</h3>
+                </div>
+            </section>
+
+            <!-- Regulatory Information -->
+            <section class="py-16 bg-gray-50">
+                <div class="container mx-auto px-4">
+                    <h2 class="text-4xl font-bold gradient-text text-center mb-12">Regulatory Information</h2>
+                    
+                    <div class="max-w-4xl mx-auto text-center">
+                        <div class="bg-white p-8 rounded-lg shadow-md card-hover">
+                            <p class="text-lg text-gray-700 mb-6">AB&T is a leading regulated financial institution, holding a comprehensive full banking license and trust license under the oversight of internationally recognized financial authorities. Our operations adhere to the highest global regulatory standards, ensuring unparalleled transparency and security.</p>
+                            
+                            <p class="text-lg text-gray-700">Our robust compliance framework is fortified by independent financial audits and certified legal counsel, guaranteeing adherence to stringent international protocols. This commitment ensures clients benefit from transparent, secure financial services while maintaining alignment with global regulatory standards.</p>
                         </div>
                     </div>
+                </div>
+            </section>
+
+            <!-- Inspirational Quotes -->
+            <section class="py-16 bg-white">
+                <div class="container mx-auto px-4">
+                    <h2 class="text-4xl font-bold gradient-text text-center mb-12">Words of Wisdom</h2>
                     
-                    <!-- Carousel Dots -->
-                    <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-2">
-                        <button class="cayman-dot w-3 h-3 rounded-full bg-white opacity-50" data-slide="0"></button>
-                        <button class="cayman-dot w-3 h-3 rounded-full bg-white opacity-50" data-slide="1"></button>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="bg-gray-50 p-8 rounded-lg shadow-md card-hover text-center">
+                            <blockquote class="text-xl italic text-gray-700 mb-4">
+                                "Take calculated risks. That is quite different from being rash."
+                            </blockquote>
+                            <p class="font-bold alhambra-red">George S. Patton</p>
+                            <p class="text-gray-600">U.S. Army General</p>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-8 rounded-lg shadow-md card-hover text-center">
+                            <blockquote class="text-xl italic text-gray-700 mb-4">
+                                "Every battle is won or lost before it is fought."
+                            </blockquote>
+                            <p class="font-bold alhambra-red">Sun Tzu</p>
+                            <p class="text-gray-600">Ancient Chinese Strategist</p>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </section>
         </div>
-    </section>
+
+        <!-- Asset Protection Tab Content -->
+        <div id="asset-protection" class="tab-content">
+            <section class="py-16 bg-white">
+                <div class="container mx-auto px-4">
+                    <div class="text-center mb-12">
+                        <h1 class="text-5xl font-bold gradient-text mb-6">ASSET PROTECTION</h1>
+                        <h2 class="text-3xl font-bold alhambra-red mb-8">& Private Wealth Planning</h2>
+                    </div>
+                    
+                    <div class="max-w-4xl mx-auto">
+                        <div class="bg-gray-50 p-8 rounded-lg shadow-md mb-8">
+                            <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                                Secure your family's financial future and preserve your legacy through cutting-edge private wealth strategies and global asset protection. Our investment management solutions harness dynamic risk intelligence and proactive portfolio management to combat market volatility and economic uncertainty.
+                            </p>
+                            
+                            <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                                Future-focused trust services ensure tax-efficient wealth structures, robust beneficiary safeguards, and conflict-resolution frameworks—guaranteeing your values endure across generations.
+                            </p>
+                            
+                            <p class="text-lg text-gray-700 leading-relaxed">
+                                For businesses, our institutional services fortify financial stability with adaptive cash management, cross-border risk mitigation, and forward-thinking operational strategies. Transform vulnerabilities into stability with tailored insurance solutions, crisis-resistant coverage, and global safeguards designed to navigate life's unpredictability.
+                            </p>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            <div class="bg-white p-6 rounded-lg shadow-md card-hover text-center">
+                                <div class="text-4xl mb-4">🛡️</div>
+                                <h3 class="text-xl font-bold alhambra-red mb-3">Investment Management</h3>
+                                <p class="text-gray-700">Dynamic risk intelligence and proactive portfolio management</p>
+                            </div>
+                            
+                            <div class="bg-white p-6 rounded-lg shadow-md card-hover text-center">
+                                <div class="text-4xl mb-4">🏛️</div>
+                                <h3 class="text-xl font-bold alhambra-red mb-3">Trust Services</h3>
+                                <p class="text-gray-700">Tax-efficient wealth structures and beneficiary safeguards</p>
+                            </div>
+                            
+                            <div class="bg-white p-6 rounded-lg shadow-md card-hover text-center">
+                                <div class="text-4xl mb-4">🏢</div>
+                                <h3 class="text-xl font-bold alhambra-red mb-3">Corporate Services</h3>
+                                <p class="text-gray-700">Cross-border risk mitigation and operational strategies</p>
+                            </div>
+                        </div>
+                        
+                        <div class="text-center mt-8">
+                            <button class="bg-alhambra-red text-white px-8 py-3 rounded-lg font-semibold btn-hover hover-shadow mr-4" onclick="scheduleCall()">Schedule a Consultation</button>
+                            <button class="border-2 border-alhambra-red text-alhambra-red px-8 py-3 rounded-lg font-semibold btn-outline-hover hover-shadow" onclick="chatWithUs()">Chat with Expert</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Shariah Investments Tab Content -->
+        <div id="shariah-investments" class="tab-content">
+            <section class="py-16 bg-white">
+                <div class="container mx-auto px-4">
+                    <div class="text-center mb-12">
+                        <h1 class="text-5xl font-bold gradient-text mb-6">SHARIAH COMPLIANT</h1>
+                        <h2 class="text-3xl font-bold alhambra-red mb-8">INVESTMENTS</h2>
+                    </div>
+                    
+                    <div class="max-w-4xl mx-auto">
+                        <div class="bg-gray-50 p-8 rounded-lg shadow-md mb-8">
+                            <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                                Alhambra Bank & Trust offers Shariah-compliant investment solutions rooted in Islamic finance principles and ethical integrity. Our halal investment portfolios undergo rigorous ethical screening, excluding industries conflicting with Islamic values while prioritizing sustainable growth and socially responsible ventures.
+                            </p>
+                            
+                            <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                                A unique purification process redirects non-compliant earnings to charity, ensuring alignment with faith-based standards without sacrificing competitive returns. We specialize in ethical wealth management, blending faith-driven finance with strategic diversification to balance moral stewardship and financial performance.
+                            </p>
+                            
+                            <p class="text-lg text-gray-700 leading-relaxed">
+                                Trust Alhambra's expertise in Islamic financial compliance to navigate regulatory complexities, ensuring every dollar supports your values. Achieve long-term prosperity with halal investment opportunities that prioritize community benefit and ethical returns.
+                            </p>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            <div class="bg-white p-6 rounded-lg shadow-md card-hover text-center">
+                                <div class="text-4xl mb-4">🕌</div>
+                                <h3 class="text-xl font-bold alhambra-red mb-3">Sukuk Bonds</h3>
+                                <p class="text-gray-700">Islamic bonds compliant with Shariah principles</p>
+                            </div>
+                            
+                            <div class="bg-white p-6 rounded-lg shadow-md card-hover text-center">
+                                <div class="text-4xl mb-4">📈</div>
+                                <h3 class="text-xl font-bold alhambra-red mb-3">Halal Funds</h3>
+                                <p class="text-gray-700">Ethically screened investment portfolios</p>
+                            </div>
+                            
+                            <div class="bg-white p-6 rounded-lg shadow-md card-hover text-center">
+                                <div class="text-4xl mb-4">🤝</div>
+                                <h3 class="text-xl font-bold alhambra-red mb-3">Takaful Insurance</h3>
+                                <p class="text-gray-700">Islamic insurance products and protection</p>
+                            </div>
+                        </div>
+                        
+                        <div class="text-center mt-8">
+                            <button class="bg-alhambra-red text-white px-8 py-3 rounded-lg font-semibold btn-hover hover-shadow mr-4" onclick="scheduleCall()">Schedule a Consultation</button>
+                            <button class="border-2 border-alhambra-red text-alhambra-red px-8 py-3 rounded-lg font-semibold btn-outline-hover hover-shadow" onclick="chatWithUs()">Chat with Expert</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Citizenship Investment Tab Content -->
+        <div id="citizenship-investment" class="tab-content">
+            <section class="py-16 bg-white">
+                <div class="container mx-auto px-4">
+                    <div class="text-center mb-12">
+                        <h1 class="text-5xl font-bold gradient-text mb-6">CITIZENSHIP BY</h1>
+                        <h2 class="text-3xl font-bold alhambra-red mb-8">INVESTMENT</h2>
+                    </div>
+                    
+                    <div class="max-w-4xl mx-auto">
+                        <div class="bg-gray-50 p-8 rounded-lg shadow-md mb-8">
+                            <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                                Elevate your global standing and secure intergenerational prosperity through citizenship by investment programs. Our government-approved pathways grant visa-free travel to 150+ countries, tax optimization strategies, and access to cross-border business ventures.
+                            </p>
+                            
+                            <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                                Streamline the journey to a second passport or residency with tailored, compliant solutions designed for freedom, security, and exponential growth. Protect Your Legacy with lifelong advantages: diversify assets, unlock global citizenship, and create a legacy of opportunity.
+                            </p>
+                            
+                            <p class="text-lg text-gray-700 leading-relaxed">
+                                Partner with trusted experts who prioritize rigorous due diligence, confidentiality, and seamless compliance. Transform your financial portfolio into a gateway for generational wealth and borderless prosperity.
+                            </p>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            <div class="bg-white p-6 rounded-lg shadow-md card-hover text-center">
+                                <div class="text-4xl mb-4">🛂</div>
+                                <h3 class="text-xl font-bold alhambra-red mb-3">Second Passports</h3>
+                                <p class="text-gray-700">Government-approved citizenship programs</p>
+                            </div>
+                            
+                            <div class="bg-white p-6 rounded-lg shadow-md card-hover text-center">
+                                <div class="text-4xl mb-4">🏅</div>
+                                <h3 class="text-xl font-bold alhambra-red mb-3">Golden Visas</h3>
+                                <p class="text-gray-700">Residence programs and investment visas</p>
+                            </div>
+                            
+                            <div class="bg-white p-6 rounded-lg shadow-md card-hover text-center">
+                                <div class="text-4xl mb-4">🌍</div>
+                                <h3 class="text-xl font-bold alhambra-red mb-3">Tax Residence</h3>
+                                <p class="text-gray-700">Optimization strategies and compliance</p>
+                            </div>
+                        </div>
+                        
+                        <div class="text-center mt-8">
+                            <button class="bg-alhambra-red text-white px-8 py-3 rounded-lg font-semibold btn-hover hover-shadow mr-4" onclick="scheduleCall()">Schedule a Consultation</button>
+                            <button class="border-2 border-alhambra-red text-alhambra-red px-8 py-3 rounded-lg font-semibold btn-outline-hover hover-shadow" onclick="chatWithUs()">Chat with Expert</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Market Insights Tab Content -->
+        <div id="market-insights" class="tab-content">
+            <section class="py-16 bg-white">
+                <div class="container mx-auto px-4">
+                    <div class="text-center mb-12">
+                        <h1 class="text-5xl font-bold gradient-text mb-6">MARKET</h1>
+                        <h2 class="text-3xl font-bold alhambra-red mb-8">INSIGHTS</h2>
+                    </div>
+                    
+                    <div class="max-w-4xl mx-auto">
+                        <div class="bg-gray-50 p-8 rounded-lg shadow-md mb-8">
+                            <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                                Stay ahead of global financial trends with our comprehensive market insights and analysis. Our expert team provides real-time market intelligence, economic forecasts, and strategic recommendations to help you make informed investment decisions.
+                            </p>
+                            
+                            <p class="text-lg text-gray-700 leading-relaxed">
+                                Access exclusive research reports, market commentary, and investment opportunities tailored to your portfolio objectives and risk tolerance.
+                            </p>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            <div class="bg-white p-6 rounded-lg shadow-md card-hover text-center">
+                                <div class="text-4xl mb-4">📊</div>
+                                <h3 class="text-xl font-bold alhambra-red mb-3">Market Analysis</h3>
+                                <p class="text-gray-700">Real-time market intelligence and trends</p>
+                            </div>
+                            
+                            <div class="bg-white p-6 rounded-lg shadow-md card-hover text-center">
+                                <div class="text-4xl mb-4">📈</div>
+                                <h3 class="text-xl font-bold alhambra-red mb-3">Economic Forecasts</h3>
+                                <p class="text-gray-700">Expert predictions and strategic insights</p>
+                            </div>
+                            
+                            <div class="bg-white p-6 rounded-lg shadow-md card-hover text-center">
+                                <div class="text-4xl mb-4">💼</div>
+                                <h3 class="text-xl font-bold alhambra-red mb-3">Investment Opportunities</h3>
+                                <p class="text-gray-700">Exclusive deals and portfolio recommendations</p>
+                            </div>
+                        </div>
+                        
+                        <div class="text-center mt-8">
+                            <button class="bg-alhambra-red text-white px-8 py-3 rounded-lg font-semibold btn-hover hover-shadow mr-4" onclick="scheduleCall()">Schedule a Consultation</button>
+                            <button class="border-2 border-alhambra-red text-alhambra-red px-8 py-3 rounded-lg font-semibold btn-outline-hover hover-shadow" onclick="chatWithUs()">Chat with Expert</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- About Us Tab Content -->
+        <div id="about-us" class="tab-content">
+            <section class="py-16 bg-white">
+                <div class="container mx-auto px-4">
+                    <div class="text-center mb-12">
+                        <h1 class="text-5xl font-bold gradient-text mb-6">ABOUT</h1>
+                        <h2 class="text-3xl font-bold alhambra-red mb-8">ALHAMBRA BANK & TRUST</h2>
+                    </div>
+                    
+                    <div class="max-w-4xl mx-auto">
+                        <div class="bg-gray-50 p-8 rounded-lg shadow-md mb-8">
+                            <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                                Alhambra Bank & Trust stands as a beacon of financial excellence in the Cayman Islands, committed to providing world-class banking services that transcend traditional boundaries. Our institution was founded on the principles of integrity, innovation, and inclusivity.
+                            </p>
+                            
+                            <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                                We believe that banking should serve as a means of empowerment rather than a hindrance. By extending respect to all and providing equitable access to financial services, we strive to cultivate trust, fortify communities, and advance a society that is more just and inclusive.
+                            </p>
+                            
+                            <p class="text-lg text-gray-700 leading-relaxed">
+                                Our commitment to excellence is reflected in our comprehensive regulatory compliance, innovative financial solutions, and unwavering dedication to client success. We are not just a bank—we are your partners in building a prosperous future.
+                            </p>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div class="bg-white p-6 rounded-lg shadow-md card-hover">
+                                <h3 class="text-2xl font-bold alhambra-red mb-4">Our History</h3>
+                                <p class="text-gray-700">Founded with a vision to democratize banking and provide equal access to financial services for all individuals and businesses, regardless of background or beliefs.</p>
+                            </div>
+                            
+                            <div class="bg-white p-6 rounded-lg shadow-md card-hover">
+                                <h3 class="text-2xl font-bold alhambra-red mb-4">Our Team</h3>
+                                <p class="text-gray-700">Led by experienced professionals with decades of expertise in international banking, wealth management, and regulatory compliance.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="text-center mt-8">
+                            <button class="bg-alhambra-red text-white px-8 py-3 rounded-lg font-semibold btn-hover hover-shadow mr-4" onclick="scheduleCall()">Schedule a Meeting</button>
+                            <button class="border-2 border-alhambra-red text-alhambra-red px-8 py-3 rounded-lg font-semibold btn-outline-hover hover-shadow" onclick="chatWithUs()">Contact Us</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
 
     <!-- Connect With Us -->
     <section class="py-16 bg-gray-50">
         <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold alhambra-red text-center mb-12">Connect With Us</h2>
+            <h2 class="text-4xl font-bold gradient-text text-center mb-12">Connect With Us</h2>
             
             <div class="flex justify-center space-x-6">
                 <a href="https://wa.me/13457431413" class="social-hover bg-green-500 text-white p-4 rounded-lg shadow-md hover-shadow">
@@ -487,6 +874,14 @@
                     <div class="text-sm font-semibold">Email</div>
                 </a>
             </div>
+            
+            <!-- Contact Information -->
+            <div class="text-center mt-8">
+                <p class="text-gray-700 mb-2"><strong>Address:</strong> 64 Earth Close, 2A3 Landmark Square, PO Box 30275</p>
+                <p class="text-gray-700 mb-2">Seven Mile Beach, Grand Cayman KY1-1202, Cayman Islands</p>
+                <p class="text-gray-700 mb-2"><strong>Phone:</strong> +1-345-743-1413</p>
+                <p class="text-gray-700"><strong>Email:</strong> abt@abt.ky</p>
+            </div>
         </div>
     </section>
 
@@ -500,6 +895,44 @@
 
     <!-- JavaScript -->
     <script>
+        // Tab System
+        function showTab(tabName) {
+            // Hide all tab contents
+            const tabContents = document.querySelectorAll('.tab-content');
+            tabContents.forEach(content => {
+                content.classList.remove('active');
+            });
+            
+            // Remove active class from all nav items
+            const navItems = document.querySelectorAll('.nav-item');
+            navItems.forEach(item => {
+                item.classList.remove('active');
+                item.classList.add('text-gray-700', 'hover:text-alhambra-red');
+                item.classList.remove('text-white');
+            });
+            
+            // Show selected tab content
+            const selectedTab = document.getElementById(tabName);
+            if (selectedTab) {
+                selectedTab.classList.add('active');
+            }
+            
+            // Update active nav item
+            const clickedNavItem = event.target;
+            clickedNavItem.classList.add('active');
+            clickedNavItem.classList.remove('text-gray-700', 'hover:text-alhambra-red');
+            clickedNavItem.classList.add('text-white');
+        }
+        
+        // Interactive Functions
+        function scheduleCall() {
+            alert('Redirecting to scheduling system...\n\nPhone: +1-345-743-1413\nEmail: abt@abt.ky\nWhatsApp: Available');
+        }
+        
+        function chatWithUs() {
+            alert('Opening chat system...\n\nYou can also reach us via:\n- WhatsApp: +1-345-743-1413\n- Telegram: Available\n- Email: abt@abt.ky');
+        }
+        
         // Image Carousel for Alhambra Palace
         let currentSlide = 0;
         const slides = document.querySelectorAll('.carousel-slide');
@@ -585,6 +1018,25 @@
                 if (target) {
                     target.scrollIntoView({
                         behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Add click handlers to all buttons
+        document.addEventListener('DOMContentLoaded', function() {
+            // Make all buttons interactive
+            const buttons = document.querySelectorAll('button');
+            buttons.forEach(button => {
+                if (!button.onclick && !button.getAttribute('onclick')) {
+                    button.addEventListener('click', function() {
+                        if (button.textContent.includes('Schedule') || button.textContent.includes('Call')) {
+                            scheduleCall();
+                        } else if (button.textContent.includes('Chat')) {
+                            chatWithUs();
+                        } else if (button.textContent.includes('Learn More')) {
+                            alert('More information available. Please schedule a call or chat with us for detailed information.');
+                        }
                     });
                 }
             });
