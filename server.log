@@ -94,3 +94,12 @@ Traceback (most recent call last):
 10.130.108.1 - - [25/Sep/2025 22:50:34] "GET /cayman-beach.jpg HTTP/1.1" 304 -
 10.130.108.1 - - [25/Sep/2025 22:50:34] "GET /alhambra-architecture.jpg HTTP/1.1" 304 -
 10.130.108.1 - - [25/Sep/2025 22:50:34] "GET /ali-alsari-founder-official.jpg HTTP/1.1" 200 -
+10.130.108.1 - - [25/Sep/2025 23:00:39] "GET /index.html HTTP/1.1" 200 -
+10.130.108.1 - - [25/Sep/2025 23:00:39] "GET /alhambra-court-lions.jpg HTTP/1.1" 304 -
+10.130.108.1 - - [25/Sep/2025 23:00:39] "GET /abt-logo-original.png HTTP/1.1" 304 -
+10.130.108.1 - - [25/Sep/2025 23:00:39] "GET /alhambra-court-detail.webp HTTP/1.1" 304 -
+10.130.108.1 - - [25/Sep/2025 23:00:39] "GET /alhambra-palace.jpeg HTTP/1.1" 304 -
+10.130.108.1 - - [25/Sep/2025 23:00:39] "GET /alhambra-architecture.jpg HTTP/1.1" 304 -
+10.130.108.1 - - [25/Sep/2025 23:00:39] "GET /cayman-beach.jpg HTTP/1.1" 304 -
+10.130.108.1 - - [25/Sep/2025 23:00:39] "GET /ali-alsari-founder-official.jpg HTTP/1.1" 304 -
+10.130.108.1 - - [25/Sep/2025 23:00:39] "GET /cayman-paradise.png HTTP/1.1" 304 -
